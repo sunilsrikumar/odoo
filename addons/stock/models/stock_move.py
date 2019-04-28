@@ -146,7 +146,7 @@ class StockMove(models.Model):
     restrict_partner_id = fields.Many2one('res.partner', 'Owner ', help="Technical field used to depict a restriction on the ownership of quants to consider when marking this move as 'done'")
     route_ids = fields.Many2many('stock.location.route', 'stock_location_route_move', 'move_id', 'route_id', 'Destination route', help="Preferred route")
     warehouse_id = fields.Many2one('stock.warehouse', 'Warehouse', help="Technical field depicting the warehouse to consider for the route selection on the next procurement (if any).")
-    has_tracking = fields.Selection(related='product_id.tracking', string='Product with Tracking')
+    has_tracking = fields.Selection(related='product_id.tracking', string='Product with Tracking', readonly=True)
     quantity_done = fields.Float('Quantity Done', compute='_quantity_done_compute', digits=dp.get_precision('Product Unit of Measure'), inverse='_quantity_done_set')
     show_operations = fields.Boolean(related='picking_id.picking_type_id.show_operations')
     show_details_visible = fields.Boolean('Details Visible', compute='_compute_show_details_visible')
@@ -897,8 +897,11 @@ class StockMove(models.Model):
         """
         assigned_moves = self.env['stock.move']
         partially_available_moves = self.env['stock.move']
+        # Read the `reserved_availability` field of the moves out of the loop to prevent unwanted
+        # cache invalidation when actually reserving the move.
+        reserved_availability = {move: move.reserved_availability for move in self}
         for move in self.filtered(lambda m: m.state in ['confirmed', 'waiting', 'partially_available']):
-            missing_reserved_uom_quantity = move.product_uom_qty - move.reserved_availability
+            missing_reserved_uom_quantity = move.product_uom_qty - reserved_availability[move]
             missing_reserved_quantity = move.product_uom._compute_quantity(missing_reserved_uom_quantity, move.product_id.uom_id, rounding_method='HALF-UP')
             if move.location_id.should_bypass_reservation()\
                     or move.product_id.type == 'consu':

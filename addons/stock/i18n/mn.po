@@ -12,6 +12,7 @@
 # Onii Onii <onii0223@yahoo.com>, 2018
 # Martin Trigaux, 2019
 # Otgonbayar.A <gobi.mn@gmail.com>, 2019
+# Oyunsuren Chultem <oyunsuren.ch@gmail.com>, 2019
 # Baskhuu Lodoikhuu <baskhuujacara@gmail.com>, 2019
 # 
 msgid ""
@@ -5240,7 +5241,7 @@ msgstr "Тоо"
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.message_body
 msgid "Quantity :"
-msgstr ""
+msgstr "Тоо хэмжээ:"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_move_quantity_done
@@ -6022,7 +6023,7 @@ msgstr ""
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_picking_show_mark_as_todo
 msgid "Show Mark As Todo"
-msgstr ""
+msgstr "Хийхээр тэмдэглэсэн ажлыг харуул"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_picking_show_operations
@@ -6032,7 +6033,7 @@ msgstr ""
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_picking_type_show_reserved
 msgid "Show Reserved"
-msgstr ""
+msgstr "Нөөцөлснийг харуул"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_picking_show_validate
@@ -6244,7 +6245,7 @@ msgstr ""
 #. module: stock
 #: model:ir.model,name:stock.model_stock_quantity_history
 msgid "Stock Quantity History"
-msgstr ""
+msgstr "Агуулахын нөөцийн түүх"
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.view_move_search
