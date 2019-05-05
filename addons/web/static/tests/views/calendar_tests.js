@@ -404,7 +404,7 @@ QUnit.module('Views', {
                     return $.Deferred().reject({
                         code: 200,
                         data: {},
-                        message: "Odoo server error",
+                        message: "ERP server error",
                     }, event);
                 }
                 return this._super(route, args);
