@@ -478,6 +478,10 @@ class Field(MetaField('DummyField', (object,), {})):
 
     def _setup_regular_base(self, model):
         """ Setup the attributes of a non-related field. """
+        pass
+
+    def _setup_regular_full(self, model):
+        """ Determine the dependencies and inverse field(s) of ``self``. """
         def make_depends(deps):
             return tuple(deps(model) if callable(deps) else deps)
 
@@ -488,10 +492,6 @@ class Field(MetaField('DummyField', (object,), {})):
                 self.depends += make_depends(getattr(method, '_depends', ()))
         else:
             self.depends = make_depends(getattr(self.compute, '_depends', ()))
-
-    def _setup_regular_full(self, model):
-        """ Setup the inverse field(s) of ``self``. """
-        pass
 
     #
     # Setup of related fields
@@ -661,7 +661,7 @@ class Field(MetaField('DummyField', (object,), {})):
     # on ``path``. See method ``modified`` below for details.
     #
 
-    def resolve_deps(self, model):
+    def resolve_deps(self, model, path0=[], seen=frozenset()):
         """ Return the dependencies of ``self`` as tuples ``(model, field, path)``,
             where ``path`` is an optional list of field names.
         """
@@ -672,11 +672,12 @@ class Field(MetaField('DummyField', (object,), {})):
         for dotnames in self.depends:
             if dotnames == self.name:
                 _logger.warning("Field %s depends on itself; please fix its decorator @api.depends().", self)
-            model, path = model0, dotnames.split('.')
-            for i, fname in enumerate(path):
+            model, path = model0, path0
+            for fname in dotnames.split('.'):
                 field = model._fields[fname]
-                result.append((model, field, path[:i]))
+                result.append((model, field, path))
                 model = model0.env.get(field.comodel_name)
+                path = None if path is None else path + [fname]
 
         # add self's model dependencies
         for mname, fnames in model0._depends.items():
@@ -686,11 +687,14 @@ class Field(MetaField('DummyField', (object,), {})):
                 result.append((model, field, None))
 
         # add indirect dependencies from the dependencies found above
+        seen = seen.union([self])
         for model, field, path in list(result):
             for inv_field in model._field_inverses[field]:
                 inv_model = model0.env[inv_field.model_name]
                 inv_path = None if path is None else path + [field.name]
                 result.append((inv_model, inv_field, inv_path))
+            if not field.store and field not in seen:
+                result += field.resolve_deps(model, path, seen)
 
         return result
 
@@ -1032,6 +1036,8 @@ class Field(MetaField('DummyField', (object,), {})):
                 recs = record._recompute_check(self)
                 if recs:
                     # recompute the value (only in cache)
+                    if self.recursive:
+                        recs = record
                     self.compute_value(recs)
                     # HACK: if result is in the wrong cache, copy values
                     if recs.env != env:
@@ -1956,6 +1962,9 @@ class Many2one(_Relational):
 
     def update_db_foreign_key(self, model, column):
         comodel = model.env[self.comodel_name]
+        # foreign keys do not work on views, and users can define custom models on sql views.
+        if not model._is_an_ordinary_table() or not comodel._is_an_ordinary_table():
+            return
         # ir_actions is inherited, so foreign key doesn't work on it
         if not comodel._auto or comodel._table == 'ir_actions':
             return
@@ -2176,8 +2185,8 @@ class _RelationalMulti(_Relational):
             for record in records:
                 record[self.name] = record[self.name].filtered(accessible)
 
-    def _setup_regular_base(self, model):
-        super(_RelationalMulti, self)._setup_regular_base(model)
+    def _setup_regular_full(self, model):
+        super(_RelationalMulti, self)._setup_regular_full(model)
         if isinstance(self.domain, list):
             self.depends += tuple(
                 self.name + '.' + arg[0]

@@ -31,6 +31,8 @@
 # Ermin Trevisan <trevi@twanda.com>, 2018
 # Martin Trigaux, 2019
 # Wolfgang Taferner, 2019
+# Chris Egal <sodaswed@web.de>, 2019
+# Leon Grill <leg@odoo.com>, 2019
 # 
 msgid ""
 msgstr ""
@@ -38,7 +40,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-03 15:06+0000\n"
 "PO-Revision-Date: 2017-09-20 10:25+0000\n"
-"Last-Translator: Wolfgang Taferner, 2019\n"
+"Last-Translator: Leon Grill <leg@odoo.com>, 2019\n"
 "Language-Team: German (https://www.transifex.com/odoo/teams/41243/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,7 +59,7 @@ msgstr "Bilder hinzufügen"
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "\" alert with a"
-msgstr ""
+msgstr "\" Alarm mit einem"
 
 #. module: website
 #: code:addons/website/models/website.py:246
@@ -193,7 +195,7 @@ msgstr "1s"
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "2 <span class=\"sr-only\">(current)</span>"
-msgstr ""
+msgstr "2 <span class=\"sr-only\">(aktuell)</span>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_comparisons
@@ -543,6 +545,8 @@ msgid ""
 "<small id=\"emailHelp\" class=\"help-block text-muted\">We'll never share "
 "your email with anyone else.</small>"
 msgstr ""
+"<small id=\"emailHelp\" class=\"help-block text-muted\">Wir werden Ihre E"
+"-Mail-Adresse niemals an Dritte weitergeben.</small>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_parallax_slider
@@ -558,7 +562,7 @@ msgstr "<small>John Doe, CEO</small>"
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "<span class=\"badge mb4\">This is a badge</span>"
-msgstr ""
+msgstr "<span class=\"badge mb4\">Das ist ein Abzeichen</span>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.user_navbar
@@ -1292,7 +1296,7 @@ msgstr "Groß"
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "Breadcrumb"
-msgstr ""
+msgstr "Brotkrume"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -1346,25 +1350,25 @@ msgstr "Abbrechen"
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "Card"
-msgstr ""
+msgstr "Karte"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "Card Body"
-msgstr ""
+msgstr "Karte Body"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "Card Footer"
-msgstr ""
+msgstr "Karte Footer"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "Card Header"
-msgstr ""
+msgstr "Karte Kopfzeile"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_feature_grid
@@ -1874,7 +1878,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "Dropdown"
-msgstr ""
+msgstr "Dropdown"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_feature_grid
@@ -1952,7 +1956,7 @@ msgstr "Redakteur und Designer"
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "Email address"
-msgstr ""
+msgstr "E-Mail-Addresse"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_comparisons
@@ -1968,7 +1972,7 @@ msgstr "Ende"
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "Enter email"
-msgstr ""
+msgstr "E-mail Adresse eingeben"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_comparisons
@@ -2373,37 +2377,37 @@ msgstr "Kopfzeile"
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "Headings 1"
-msgstr ""
+msgstr "Überschrift 1"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "Headings 2"
-msgstr ""
+msgstr "Überschrift 2"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "Headings 3"
-msgstr ""
+msgstr "Überschrift 3"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "Headings 4"
-msgstr ""
+msgstr "Überschrift 4"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "Headings 5"
-msgstr ""
+msgstr "Überschrift 5"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "Headings 6"
-msgstr ""
+msgstr "Überschrift 6"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_cover
@@ -2672,13 +2676,13 @@ msgstr ""
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "Item 1"
-msgstr ""
+msgstr "Item 1"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "Item 2"
-msgstr ""
+msgstr "Item 2"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -3053,7 +3057,7 @@ msgstr "Namecheap"
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "Navbar"
-msgstr ""
+msgstr "Navigationleiste"
 
 #. module: website
 #. openerp-web
@@ -4184,7 +4188,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "This is a \""
-msgstr ""
+msgstr "Das ist ein \""
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.page_404
@@ -5164,7 +5168,7 @@ msgstr "zu erfahren, wie Leute Ihre Website finden,"
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
 #: model:website.page,arch_db:website.bs_debug_page
 msgid "link"
-msgstr ""
+msgstr "Link"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner

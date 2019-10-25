@@ -2139,7 +2139,7 @@ msgstr "Seskupit podle"
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_team_dashboard_graph_group_pipeline
 msgid "Group by"
-msgstr ""
+msgstr "Skupina podle"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_base_partner_merge_automatic_wizard_number_group
@@ -2559,7 +2559,7 @@ msgstr ""
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.view_crm_lead2opportunity_partner_mass
 msgid "Leads with existing duplicates (for information)"
-msgstr ""
+msgstr "Potenciální zákazníci s existujícími duplicitami (pro informaci)"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_merge_opportunity_opportunity_ids
@@ -3413,7 +3413,7 @@ msgstr "Produkty"
 #: model:ir.ui.view,arch_db:crm.crm_planner
 #, python-format
 msgid "Proposal"
-msgstr ""
+msgstr "Návrh"
 
 #. module: crm
 #. openerp-web
@@ -3799,6 +3799,8 @@ msgid ""
 "Specific team that uses this stage. Other teams will not be able to see or "
 "use this stage."
 msgstr ""
+"Konkrétní tým, který tuto fázi využívá. Ostatní týmy nebudou moci tuto fázi "
+"vidět ani použít."
 
 #. module: crm
 #: selection:crm.team,dashboard_graph_group_pipeline:0
@@ -3919,7 +3921,7 @@ msgstr "Štítek"
 #. module: crm
 #: sql_constraint:crm.lead.tag:0
 msgid "Tag name already exists !"
-msgstr ""
+msgstr "Název značky již existuje!"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lead_tag_ids
@@ -4137,7 +4139,7 @@ msgstr ""
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
 msgid "Time to Qualify a Lead"
-msgstr ""
+msgstr "Čas k vyhodnocení zájemců"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lead_title
@@ -4356,7 +4358,7 @@ msgstr ""
 #. module: crm
 #: selection:crm.lead,priority:0 selection:crm.opportunity.report,priority:0
 msgid "Very High"
-msgstr ""
+msgstr "Velmi vysoko"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -4693,7 +4695,7 @@ msgstr "např. www.odoo.com"
 #: code:addons/crm/models/crm_lead.py:912
 #, python-format
 msgid "opportunities"
-msgstr ""
+msgstr "příležitosti"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
